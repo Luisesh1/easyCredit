@@ -1,0 +1,12 @@
+<mat-card class="expand h">
+    <h2> Historial Crediticio</h2>
+    <mat-list>
+        <ng-container *ngFor="let req of requests">
+            <mat-list-item>
+                Cantidad:{{req.amount | currency}}, pagos: {{req.npayments}} mensuales, Estado:
+                <span [ngClass]="req.status === 'REJECTED' ? 'red' : 'green'"> {{req.status}} </span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </ng-container>
+    </mat-list>
+</mat-card>

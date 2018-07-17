@@ -1,0 +1,18 @@
+<mat-card class="expand h">
+    <h2> Soicitudes actuales</h2>
+
+    <mat-divider></mat-divider>
+    <mat-list>
+        <ng-container *ngFor="let req of requests">
+            <mat-list-item>
+                Cantidad:{{req.amount | currency}}, pagos: {{req.npayments}} mensuales, Estado:
+                <mat-chip color="primary" selected> {{req.status}} </mat-chip>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </ng-container>
+
+    </mat-list>
+    <mat-divider></mat-divider>
+    <br>
+    <button mat-raised-button color="primary" routerLink="/request/new">Solicitar</button>
+</mat-card>

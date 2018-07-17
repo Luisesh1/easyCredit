@@ -1,0 +1,11 @@
+<mat-card class="expand">
+    <form #f="ngForm" ngNativeValidate (ngSubmit)="onSubmit(f)">
+        <h3>Inicio de session</h3>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-form-field class="expand-input">
+            <input matInput placeholder="Nombre de usuario" required class="expand-input" [(ngModel)]="username" name="username">
+        </mat-form-field><br>
+        <button mat-raised-button color="primary" type="submit">Entrar</button>
+    </form>
+</mat-card>

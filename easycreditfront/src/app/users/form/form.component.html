@@ -1,0 +1,44 @@
+<mat-grid-list #grid rowHeight="1:1.5">
+    <mat-grid-tile *ngIf="grid.cols>2">
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="expand">
+            <h2>Levantar Solicitud de Credito</h2>
+            <mat-divider></mat-divider>
+            <br>
+            <form #f="ngForm" ngNativeValidate (ngSubmit)="onSubmit(f)">
+                <mat-form-field class="expand-input">
+                    <input matInput placeholder="Nombres" class="expand-input" type="text" name="name" class="example-right-align" [(ngModel)]='user.name' required>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="expand-input">
+                    <input matInput placeholder="Apellidos" type="text" class="expand-input" name="lastname" class="example-right-align" [(ngModel)]='user.lastname' required>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="expand-input">
+                    <input matInput class="expand-input" [matDatepicker]="picker" placeholder="Fecha de nacimiento" [(ngModel)]='user.birddate' name="birddate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="expand-input">
+                    <input matInput placeholder="Direccion" type="text" name="address" class="example-right-align" class="expand-input" [(ngModel)]='user.address'>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="Codigo Postal" type="number" name="postalcode" class="example-right-align" [(ngModel)]='user.postalcode'>
+                </mat-form-field>
+                {{" "}}
+                <mat-form-field>
+                    <input matInput placeholder="Pais" type="text" name="country" class="example-right-align" [(ngModel)]='user.country'>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button color="warn" type="submit">Actualizar</button>
+            </form>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile *ngIf="grid.cols>1">
+
+    </mat-grid-tile>
+</mat-grid-list>

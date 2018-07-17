@@ -1,0 +1,14 @@
+<mat-card class="expand h">
+    <h2>Informacion del Usuario</h2>
+    <mat-divider></mat-divider>
+    <br>
+    <br>
+    <mat-list>
+        <mat-list-item> Nombre: {{user.name}} </mat-list-item>
+        <mat-list-item> Fecha de nacimiento: {{user.birddate}}</mat-list-item>
+        <mat-list-item> direccion: {{user.address}} </mat-list-item>
+        <mat-list-item> codigo postal:{{user.postalcode}} </mat-list-item>
+        <mat-list-item> pais: {{user.country}} </mat-list-item>
+    </mat-list>
+    <button mat-raised-button color="primary" routerLink="/users/perfil">Actualizar perfil</button>
+</mat-card>

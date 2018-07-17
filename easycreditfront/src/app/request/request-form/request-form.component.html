@@ -1,0 +1,68 @@
+<mat-grid-list #grid rowHeight="1:1.5">
+    <mat-grid-tile *ngIf="grid.cols>2">
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="expand">
+            <h2>Levantar Solicitud de Credito</h2>
+            <mat-divider></mat-divider>
+            <br>
+            <form #f="ngForm" ngNativeValidate (ngSubmit)="onSubmit(f)">
+                <mat-form-field>
+                    <input matInput placeholder="Monto" type="number" name="amount" [ngModelOptions]="{standalone: true}" class="example-right-align" name="" [(ngModel)]='request.amount' #amount="ngModel" appInteger min="1" max="99999" step="1" required>
+                    <span matPrefix>$&nbsp;</span>
+                    <span matSuffix>.00</span>
+                </mat-form-field>
+                <span *ngIf="!amount.valid && amount.touched">
+          <div [hidden]=" !amount.errors.required">
+            Este campo es obligatorio
+          </div>
+          <div [hidden]=" !amount.errors.min">
+            El monto del prestamo debe ser una catidad mayor a cero.
+          </div>
+          <div [hidden]=" !amount.errors.max">
+            El monto del prestamo debe ser una catidad mayor a cien mil.
+          </div>
+          <div [hidden]=" !amount.errors.integer">
+            No se adminten decimales
+          </div>
+        </span>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="Edad" name="age" type="number" class="example-right-align" [(ngModel)]='request.age' #age="ngModel" appInteger required min="1" max="100">
+                </mat-form-field>
+                <span *ngIf="!age.valid && age.touched">
+          <div [hidden]=" !age.errors.required">
+            Este campo es obligatorio
+          </div>
+          <div [hidden]=" !age.errors.min">
+            El monto del prestamo debe ser una catidad mayor a cero.
+          </div>
+          <div [hidden]=" !age.errors.max">
+            El monto del prestamo debe ser una catidad mayor a cien mil.
+          </div>
+          <div [hidden]=" !age.errors.integer">
+            No se adminten decimales
+          </div>
+        </span>
+                <br>
+                <mat-checkbox [(ngModel)]='request.creditCard' name="creditCard"> Cuenta con tarjeta de credito? </mat-checkbox>
+                <br>
+                <br><br>
+                <mat-radio-group class="example-radio-group" name="selectedOption" [(ngModel)]="selectedOption" required>
+                    <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="option">
+                        {{option.caption}}
+                    </mat-radio-button>
+                </mat-radio-group>
+
+                <div class="example-selected-value">Plazo seleccionado : {{selectedOption.caption}}</div>
+                <div class="example-selected-value">Total a pagar : {{request.amount * selectedOption.fee | currency }}</div>
+
+                <button mat-raised-button color="warn" type="submit">Enviar Solicitud</button>
+            </form>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile *ngIf="grid.cols>1">
+
+    </mat-grid-tile>
+</mat-grid-list>

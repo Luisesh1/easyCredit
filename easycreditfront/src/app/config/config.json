@@ -1,0 +1,5 @@
+{
+  'backUrl': 'localhost',
+  'backPort': '3000',
+  'backFullUrl': 'localhost:3000'
+}

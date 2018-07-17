@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+        <span routerLink="/">Easy Credit</span>
+        <span class="spacer"></span>
+        <span class="item-spacer" routerLink="/login" [hidden]="isLogged.valor"><mat-icon class="item-spacer">verified_user</mat-icon>Ingresar</span>
+        <span class="item-spacer" routerLink="/login" [hidden]="!isLogged.valor" (click)="logOut()"><mat-icon class="item-spacer">verified_user</mat-icon>Salir</span>
+    </mat-toolbar-row>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

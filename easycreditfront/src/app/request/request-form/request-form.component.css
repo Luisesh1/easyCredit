@@ -1,0 +1,40 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+
+.example-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.example-radio-button {
+    margin: 5px;
+}
+
+.example-selected-value {
+    margin: 15px 0;
+}
+
+.expand {
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+}

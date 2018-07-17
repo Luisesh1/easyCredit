@@ -1,0 +1,8 @@
+{
+    "jwtsecret": "easyCreditLuisesh1",
+    "requestsStatus": {
+        "pending": "PENDING",
+        "accepted": "ACCEPTED",
+        "rejected": "REJECTED"
+    }
+}
